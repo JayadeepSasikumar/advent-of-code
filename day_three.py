@@ -2,14 +2,14 @@ import os
 import re
 
 import numpy as np
-import pandas as pd
 
 from config import DATA_DIR
 
 def _parse_claim(input_line):
 	"""
 	Parses a claim of the format "#1305 @ 400,523: 25x10" and returns
-	the claim details as a list of the five elements.
+	the claim details as a dict with ['id', 'x', 'y', 'w', 'h'] as the
+	keys.
 
 	Inputs -
 		input_line - a claim of format "#id @ x,y: wxh"
