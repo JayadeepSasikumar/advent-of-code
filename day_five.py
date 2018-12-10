@@ -80,6 +80,21 @@ def one():
     units = react(units)
     return len(units)
 
+def one_optimised():
+    polymer = _get_input_data('day_five.txt')
+    i = 0
+    while True:
+        try:
+            if polymer[i] == polymer[i + 1].swapcase():
+                polymer = polymer[: i] + polymer[i + 2:]
+                if i > 0:
+                    i -= 1
+            else:
+                i += 1
+        except IndexError:
+            break
+    return len(polymer)
+
 def two():
     polymer = _get_input_data('day_five.txt')
     reduced_polymer_lengths = {}
