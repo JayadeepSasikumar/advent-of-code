@@ -18,7 +18,6 @@ def two():
 	current_value = 0
 	overall_idx = 0
 	data_len = len(input_data)
-	import ipdb; ipdb.set_trace()
 	while True:
 		current_idx = overall_idx % data_len
 		current_value += input_data[current_idx]
